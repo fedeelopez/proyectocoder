@@ -5,94 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TermoTienda - Productos</title>
   <link rel="shortcut icon" href="../assets/LOGO TERMO TIENDA.png" type="image/x-icon" />
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Tu CSS personalizado -->
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header class="bg-info sticky-top py-2">
-    <div class="container d-flex justify-content-between align-items-center">
+  <header class="bg-info sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light container">
       <div class="d-flex align-items-center">
-        <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo de Termo Tienda" width="70" class="me-3" />
-        <h1 class="fs-3 m-0 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</h1>
+        <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
+        <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
       </div>
-      <nav>
-        <ul class="nav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+        <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./servicios.html">Servicios</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./empresa.html">Empresa</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
         </ul>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
-  <!-- MAIN -->
   <main class="container py-5">
     <h1 class="text-center mb-5" style="font-family: 'Barriecito', cursive;">Nuestros Productos</h1>
-
-    <div class="row g-4">
-      <!-- Producto -->
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="producto">
-          <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="Termo Violeta" />
-          <div class="info-producto">
-            <h3 class="nombre-producto">Termo 1.2L + Mate</h3>
-            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button class="btn">Comprar</button>
-          </div>
+    <div class="productos-grid">
+      <div class="producto">
+        <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo 1.2L + Mate</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
         </div>
       </div>
 
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="producto">
-          <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="Combo Matero" />
-          <div class="info-producto">
-            <h3 class="nombre-producto">Combo Matero</h3>
-            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button class="btn">Comprar</button>
-          </div>
+      <div class="producto">
+        <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Combo Matero</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
         </div>
       </div>
 
-      <!-- Repetir para los demás productos -->
-      <!-- Podés hacer un loop dinámico si usás backend -->
-
-      <!-- Ejemplo repetido -->
-      <!-- Podés cambiar las imágenes y textos según corresponda -->
-      <!-- Usé el mismo para demostrar consistencia -->
-      <!-- Ingresá tus propios productos acá -->
-      <!-- Copio 6 iguales como ejemplo -->
-
-      <!-- Repetidos para demo -->
-      <div class="col-sm-6 col-md-4 col-lg-3">
-        <div class="producto">
-          <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="Termo" />
-          <div class="info-producto">
-            <h3 class="nombre-producto">Termo</h3>
-            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            <button class="btn">Ver más</button>
-          </div>
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Combo Matero</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
         </div>
       </div>
 
-      <!-- Agregá más productos según sea necesario -->
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
+
+      <div class="producto">
+        <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
+        <div class="info-producto">
+          <h3 class="nombre-producto">Termo</h3>
+          <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <button class="btn">Comprar</button>
+        </div>
+      </div>
     </div>
   </main>
 
-  <!-- FOOTER -->
   <footer class="bg-success text-center text-white py-3 mt-5">
     <p class="mb-0">Federico Lopez | Coder 75710</p>
   </footer>
-
 </body>
 </html>

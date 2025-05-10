@@ -1,82 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Descubrí Termo Tienda: termos, vasos y bolsos térmicos de alta calidad, personalizados y funcionales.">
-    <link rel="shortcut icon" href="./assets/LOGO TERMO TIENDA.png" type="image/x-icon" />
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-whatever" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-whatever" crossorigin="anonymous"></script>
-
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barriecito&display=swap" rel="stylesheet" />
-
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>TermoTienda - Inicio</title>
-  </head>
-  <body>
-    <header class="bg-info sticky-top">
-      <nav class="navbar navbar-expand-md navbar-light container">
-        <div class="d-flex align-items-center">
-          <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
-          <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
-        </div>
-    
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-    
-        <div class="collapse navbar-collapse justify-content-end" id="menuNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="./productos.html">Productos</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="./servicios.html">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="./empresa.html">Empresa</a></li>
-            <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    
-
-    <main class="contenido-principal">
-      <section class="contenedor-productos">
-        <h1>Bienvenidos a Termo Tienda</h1>
-
-        <div class="productos">
-          <div class="producto">
-            <div class="info-producto-inicio">
-              <h2>Termos de Alta Tecnología</h2>
-              <h3>Mantén tus bebidas a la temperatura perfecta durante horas con nuestros termos de diseño innovador. Hechos con materiales de alta calidad, nuestros termos son ideales para aquellos que buscan comodidad, resistencia y eficiencia. Perfectos para llevar a la oficina, al gimnasio o de viaje, con una tecnología que mantiene tus bebidas frías o calientes por más tiempo.</h3>
-              <a class="boton" href="./pages/productos.html">Ver Más</a> 
-            </div>
-          </div>
-
-          <div class="producto">
-            <div class="info-producto-inicio">
-              <h2>Vasos Térmicos Personalizables</h2>
-              <h3>Disfruta de tu café, té o agua fría a la temperatura ideal con nuestros vasos térmicos. Con aislamiento avanzado, estos vasos son perfectos para el día a día. Además, su diseño ergonómico y moderno te permitirá personalizarlos a tu gusto. Elige entre diferentes colores y tamaños, y lleva tu bebida favorita contigo en todo momento, sin preocupaciones de derrames o cambios de temperatura.</h3>
-              <a class="boton" href="./pages/productos.html">Ver Más</a>
-            </div>
-          </div>
-
-          <div class="producto">
-            <div class="info-producto-inicio">
-              <h2>Bolsos Térmicos Multifuncionales</h2>
-              <h3>Nuestros bolsos térmicos no solo mantienen tus alimentos frescos, sino que también ofrecen una solución práctica y elegante para tus desplazamientos. Con compartimentos especializados para termos, vasos y más, estos bolsos están diseñados para que puedas disfrutar de tus comidas y bebidas en el momento que desees, ya sea en el trabajo, el gimnasio o de picnic. Un accesorio que combina funcionalidad y estilo.</h3>
-              <a class="boton" href="./pages/productos.html">Ver Más</a>
-            </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Descubrí Termo Tienda: termos, vasos y bolsos térmicos de alta calidad, personalizados y funcionales.">
+  <link rel="shortcut icon" href="./assets/LOGO TERMO TIENDA.png" type="image/x-icon" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barriecito&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <title>TermoTienda - Inicio</title>
+</head>
+<body>
+  <header class="bg-info sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light container">
+      <div class="d-flex align-items-center">
+        <img src="./assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
+        <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
+      </div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="./index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./pages/productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./pages/servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./pages/empresa.html">Empresa</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./pages/contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main class="container py-5">
+    <h1 class="text-center mb-5" style="font-family: 'Barriecito', cursive;">Bienvenidos a Termo Tienda</h1>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="producto h-100">
+          <div class="info-producto-inicio">
+            <h2>Termos de Alta Tecnología</h2>
+            <p>Mantén tus bebidas a la temperatura perfecta durante horas con nuestros termos de diseño innovador. Hechos con materiales de alta calidad, nuestros termos son ideales para aquellos que buscan comodidad, resistencia y eficiencia. Perfectos para llevar a la oficina, al gimnasio o de viaje, con una tecnología que mantiene tus bebidas frías o calientes por más tiempo.</p>
+            <a class="boton mt-auto" href="./pages/productos.html">Ver Más</a>
           </div>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>Federico Lopez | Coder 75710</p>
-    </footer>
-  </body>
+      </div>
+      <div class="col-md-4">
+        <div class="producto h-100">
+          <div class="info-producto-inicio">
+            <h2>Vasos Térmicos Personalizables</h2>
+            <p>Disfruta de tu café, té o agua fría a la temperatura ideal con nuestros vasos térmicos. Con aislamiento avanzado, estos vasos son perfectos para el día a día. Además, su diseño ergonómico y moderno te permitirá personalizarlos a tu gusto. Elige entre diferentes colores y tamaños, y lleva tu bebida favorita contigo en todo momento, sin preocupaciones de derrames o cambios de temperatura.</p>
+            <a class="boton mt-auto" href="./pages/productos.html">Ver Más</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="producto h-100">
+          <div class="info-producto-inicio">
+            <h2>Bolsos Térmicos Multifuncionales</h2>
+            <p>Nuestros bolsos térmicos no solo mantienen tus alimentos frescos, sino que también ofrecen una solución práctica y elegante para tus desplazamientos. Con compartimentos especializados para termos, vasos y más, estos bolsos están diseñados para que puedas disfrutar de tus comidas y bebidas en el momento que desees, ya sea en el trabajo, el gimnasio o de picnic. Un accesorio que combina funcionalidad y estilo.</p>
+            <a class="boton mt-auto" href="./pages/productos.html">Ver Más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="bg-success text-center text-white py-3 mt-5">
+    <p class="mb-0">Federico Lopez | Coder 75710</p>
+  </footer>
+</body>
 </html>
