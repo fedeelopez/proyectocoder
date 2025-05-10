@@ -7,17 +7,17 @@
 
 body {
   background-color: #f0f0f0;
-  background-image:url(https://images.unsplash.com/photo-1478109562701-8d261b58b09d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxmb25kbyUyMHBhcmElMjBwYWdpbmElMjBkZSUyMHZlbnRhcyUyMGRlJTIwdGVybW9zfGVufDB8MHwwfHx8MA%3D%3D) ;
+  background-image: url(https://images.unsplash.com/photo-1478109562701-8d261b58b09d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTQzfHxmb25kbyUyMHBhcmElMjBwYWdpbmElMjBkZSUyMHZlbnRhcyUyMGRlJTIwdGVybW9zfGVufDB8MHwwfHx8MA%3D%3D);
   background-size: cover;
 }
 
 .header {
   background-color: #3BACD9;
   position: sticky;
-  top: 0 ;
+  top: 0;
 }
 
-.logo{
+.logo {
   display: flex;
   align-items: center;
 }
@@ -41,30 +41,37 @@ body {
   list-style: none;
 }
 
-.enlaces li a{
+.enlaces li a {
   text-decoration: none;
+}
+
+/* Tipografía personalizada */
+h1, h2 {
+  font-family: 'Barriecito', cursive;
+}
+
+h3 {
+  font-family: 'Abril Fatface', serif;
 }
 
 /* Estilos para la sección de información de la empresa */
 .company-info {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .company-info-container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .company-description {
   font-size: 1.2em;
   color: #555;
   line-height: 1.6;
-  margin: 30px;
+  margin: 30px auto;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .company-details {
@@ -110,7 +117,6 @@ body {
 }
 
 /* Estilos para la sección de servicios */
-
 section.servicios {
   padding: 40px 20px;
   background-color: #fff;
@@ -160,6 +166,14 @@ h3 {
   .servicios-lista {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .company-details {
+    grid-template-columns: 1fr;
+  }
+
+  .company-info-container {
+    padding: 0 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -168,30 +182,14 @@ h3 {
   }
 }
 
-
-
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-  .company-details {
-      grid-template-columns: 1fr;
-  }
-
-  .company-info-container {
-      padding: 0 20px;
-  }
-}
-
 .contenido-principal {
   max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 40px;
+  margin: 40px auto 0;
   justify-content: center;
   display: flex;
 }
 
 .contenido-principal h1 {
-  margin-top: 30px;
   text-align: center;
   font-size: 40px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -200,71 +198,8 @@ h3 {
 .productos {
   margin-top: 20px;
   display: grid;
-  grid-template-columns: 2fr;
+  grid-template-columns: 1fr;
   gap: 20px;
-}
-
-.productos-todos {
-  margin-top: 20px;
-  display: grid;
-  grid-template-columns: repeat(4, 2fr);
-  gap: 20px;
-}
-
-.form-container {
-  background-color: #EDBE37;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 600px;
-  text-align: center;
-}
-
-.input-group {
-  margin-bottom: 20px;
-  text-align: left;
-}
-
-label {
-  display: block;
-  font-size: 1.1em;
-  margin-bottom: 8px;
-  color: #555;
-}
-
-input[type="text"], input[type="email"], textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 1em;
-  color: #333;
-  transition: border-color 0.3s ease;
-}
-
-input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
-  border-color: #007BFF;
-  outline: none;
-}
-
-textarea {
-  resize: vertical;
-}
-
-button[type="submit"] {
-  padding: 12px 25px;
-  background-color: #007BFF;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  font-size: 1.1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button[type="submit"]:hover {
-  background-color: #fff700;
 }
 
 @media (min-width: 768px) {
@@ -289,13 +224,7 @@ button[type="submit"]:hover {
   object-fit: cover;
 }
 
-.info-producto-inicio {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 500px;
-}
-
+.info-producto-inicio,
 .info-producto {
   display: flex;
   flex-direction: column;
@@ -317,15 +246,8 @@ button[type="submit"]:hover {
   text-align: center;
 }
 
-.btn {
-  background-color: black;
-  color: #f0f0f0;
-  padding: 7px;
-  border: none;
-  border-radius: 10px;
-}
-
-.boton {
+/* Botones unificados */
+.boton, .btn {
   background-color: black;
   color: #f0f0f0;
   padding: 7px;
@@ -333,6 +255,13 @@ button[type="submit"]:hover {
   border-radius: 10px;
   text-decoration: none;
   text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton:hover, .btn:hover {
+  background-color: #fff700;
+  color: black;
 }
 
 /* Estilo para el contenedor del carrito */
@@ -346,11 +275,9 @@ button[type="submit"]:hover {
   cursor: pointer;
 }
 
-
 footer {
   background-color: #4AD97C;
   padding: 10px;
   text-align: center;
   margin-top: 50px;
 }
-

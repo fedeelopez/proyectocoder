@@ -1,116 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      href="../assets/LOGO TERMO TIENDA.png"
-      type="image/x-icon"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css" />
-    <title>TermoTienda - Productos</title>
-  </head>
-  <body>
-    <header class="header">
-      <div class="contenedor">
-        <!-- logo -->
-        <div class="logo">
-          <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="100px"/>
-          <h1>Termo Tienda</h1>
-        </div>        
-        <!-- Enlaces -->
-        <nav class="enlaces">
-            <li><a href="../index.html">INICIO</a></li>
-            <li><a href="./servicios.html">SERVICIOS</a></li>
-            <li><a href="./empresa.html">EMPRESA</a></li>
-            <li><a href="./contacto.html">CONTACTO</a></li>
-        </nav> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TermoTienda - Productos</title>
+  <link rel="shortcut icon" href="../assets/LOGO TERMO TIENDA.png" type="image/x-icon" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tu CSS personalizado -->
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="bg-info sticky-top py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo de Termo Tienda" width="70" class="me-3" />
+        <h1 class="fs-3 m-0 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</h1>
       </div>
-    </header>
-    <main class="contenido-principal">
-      <section class="contenedor-productos">
-        <h1>Nuestros productos</h1>
-        <div class="productos-todos">
+      <nav>
+        <ul class="nav">
+          <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./empresa.html">Empresa</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-          <div class="producto">
-            <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo 1.2L + Mate</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Comprar</button>
-            </div>
-          </div>
-  
-          <div class="producto">
-            <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Combo Matero</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Comprar</button>
-            </div>
-          </div>
+  <!-- MAIN -->
+  <main class="container py-5">
+    <h1 class="text-center mb-5" style="font-family: 'Barriecito', cursive;">Nuestros Productos</h1>
 
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Comprar</button>
-            </div>
+    <div class="row g-4">
+      <!-- Producto -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="producto">
+          <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="Termo Violeta" />
+          <div class="info-producto">
+            <h3 class="nombre-producto">Termo 1.2L + Mate</h3>
+            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="btn">Comprar</button>
           </div>
-
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Ver mas</button>
-            </div>
-          </div>
-
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Ver mas</button>
-            </div>
-          </div>
-
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Ver mas</button>
-            </div>
-          </div>
-
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Ver mas</button>
-            </div>
-          </div>
-
-          <div class="producto">
-            <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="">
-            <div class="info-producto">
-              <h3 class="nombre-producto">Termo</h3>
-              <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-              <button class="btn">Ver mas</button>
-            </div>
-          </div>
-
         </div>
-        
-      </section>
-    </main>
-    <footer><div>Federico Lopez | Coder 75710</div</footer>
-  </body>
+      </div>
+
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="producto">
+          <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="Combo Matero" />
+          <div class="info-producto">
+            <h3 class="nombre-producto">Combo Matero</h3>
+            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="btn">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repetir para los demás productos -->
+      <!-- Podés hacer un loop dinámico si usás backend -->
+
+      <!-- Ejemplo repetido -->
+      <!-- Podés cambiar las imágenes y textos según corresponda -->
+      <!-- Usé el mismo para demostrar consistencia -->
+      <!-- Ingresá tus propios productos acá -->
+      <!-- Copio 6 iguales como ejemplo -->
+
+      <!-- Repetidos para demo -->
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="producto">
+          <img class="imagen-producto" src="https://http2.mlstatic.com/D_NQ_NP_650162-MCO82256388787_022025-O.webp" alt="Termo" />
+          <div class="info-producto">
+            <h3 class="nombre-producto">Termo</h3>
+            <p class="des-producto">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <button class="btn">Ver más</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agregá más productos según sea necesario -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-success text-center text-white py-3 mt-5">
+    <p class="mb-0">Federico Lopez | Coder 75710</p>
+  </footer>
+
+</body>
 </html>
