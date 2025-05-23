@@ -1,0 +1,143 @@
+// VARIABLES
+$primary-color: #2c3e50;
+$secondary-color: #3498db;
+$text-color: #fff;
+$font-stack: 'Segoe UI', sans-serif;
+$spacing: 20px;
+
+// MIXINS
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin transition($prop...) {
+  transition: $prop;
+  -webkit-transition: $prop;
+}
+
+// PLACEHOLDER FOR EXTEND
+%button-style {
+  padding: 10px 20px;
+  border: none;
+  color: $text-color;
+  cursor: pointer;
+  font-size: 16px;
+  @include transition(all 0.3s ease);
+}
+
+// ANIMACIONES
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95) rotateZ(-1deg);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateZ(0);
+    filter: blur(0);
+  }
+}
+
+// BASE STYLES
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  background-color: $primary-color;
+  color: $text-color;
+
+  header {
+    background-color: $secondary-color;
+    padding: $spacing;
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 15px;
+
+        li {
+          a {
+            color: $text-color;
+            text-decoration: none;
+
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  main {
+    padding: $spacing;
+
+    h1, h2 {
+      margin-bottom: 10px;
+    }
+
+    .card {
+      background-color: lighten($primary-color, 10%);
+      padding: $spacing;
+      border-radius: 10px;
+      @include flex-center;
+      flex-direction: column;
+
+      p {
+        text-align: center;
+      }
+    }
+
+    .producto {
+      background-color: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      @include transition(all 0.4s ease);
+      animation: fadeInUp 0.7s ease forwards;
+      overflow: hidden;
+      color: $primary-color;
+
+      img {
+        max-width: 100%;
+        border-radius: 8px;
+        @include transition(all 0.3s ease);
+      }
+
+      h3 {
+        color: $primary-color;
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  footer {
+    background-color: darken($secondary-color, 10%);
+    padding: $spacing;
+    text-align: center;
+  }
+}
+
+// BUTTONS
+.btn-primary {
+  @extend %button-style;
+  background-color: $secondary-color;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.btn-secondary {
+  @extend %button-style;
+  background-color: lighten($primary-color, 10%);
+
+  &:hover {
+    background-color: lighten($primary-color, 20%);
+  }
+}
