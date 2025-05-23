@@ -1,143 +1,96 @@
 // VARIABLES
-$primary-color: #2c3e50;
-$secondary-color: #3498db;
-$text-color: #fff;
-$font-stack: 'Segoe UI', sans-serif;
-$spacing: 20px;
+$primary-color: #f5c06e;
+$button-bg: #000;
+$button-hover: #333;
+$text-color: #000;
+$text-muted: #333;
+$font-stack: "Segoe UI", sans-serif;
 
-// MIXINS
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@mixin transition($prop...) {
-  transition: $prop;
-  -webkit-transition: $prop;
-}
-
-// PLACEHOLDER FOR EXTEND
-%button-style {
-  padding: 10px 20px;
-  border: none;
-  color: $text-color;
-  cursor: pointer;
-  font-size: 16px;
-  @include transition(all 0.3s ease);
-}
-
-// ANIMACIONES
+// ANIMACIÓN
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(20px) scale(0.95) rotateZ(-1deg);
-    filter: blur(3px);
+    transform: translateY(20px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1) rotateZ(0);
-    filter: blur(0);
+    transform: translateY(0);
   }
 }
 
-// BASE STYLES
 body {
   font-family: $font-stack;
-  margin: 0;
-  padding: 0;
-  background-color: $primary-color;
+  background: url("../assets/background.png");
+  background-size: cover;
+  background-attachment: fixed;
   color: $text-color;
+}
 
-  header {
-    background-color: $secondary-color;
-    padding: $spacing;
+main {
+  padding: 40px 20px;
 
-    nav {
-      ul {
-        list-style: none;
-        display: flex;
-        gap: 15px;
-
-        li {
-          a {
-            color: $text-color;
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
-        }
-      }
-    }
+  .productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
-  main {
-    padding: $spacing;
+  .producto {
+    background-color: #f5c06e;
+    border-radius: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    animation: fadeInUp 0.6s ease both;
+    min-height: 420px; // ajustá según necesidad
+    box-sizing: border-box;
+  }
 
-    h1, h2 {
+  .imagen-producto {
+    width: 100%;
+    height: 180px; // altura fija para todas
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+
+  .info-producto {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+
+    .nombre-producto {
+      font-weight: bold;
+      font-size: 18px;
       margin-bottom: 10px;
     }
 
-    .card {
-      background-color: lighten($primary-color, 10%);
-      padding: $spacing;
-      border-radius: 10px;
-      @include flex-center;
-      flex-direction: column;
-
-      p {
-        text-align: center;
-      }
+    .des-producto {
+      font-size: 14px;
+      color: #333;
+      margin-bottom: auto; // empuja el botón hacia abajo
     }
 
-    .producto {
-      background-color: white;
-      padding: 15px;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      @include transition(all 0.4s ease);
-      animation: fadeInUp 0.7s ease forwards;
-      overflow: hidden;
-      color: $primary-color;
+    .btn {
+      background-color: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      cursor: pointer;
 
-      img {
-        max-width: 100%;
-        border-radius: 8px;
-        @include transition(all 0.3s ease);
-      }
-
-      h3 {
-        color: $primary-color;
-        text-align: center;
-        margin-top: 10px;
+      &:hover {
+        background-color: #333;
       }
     }
-  }
-
-  footer {
-    background-color: darken($secondary-color, 10%);
-    padding: $spacing;
-    text-align: center;
-  }
-}
-
-// BUTTONS
-.btn-primary {
-  @extend %button-style;
-  background-color: $secondary-color;
-
-  &:hover {
-    background-color: darken($secondary-color, 10%);
-  }
-}
-
-.btn-secondary {
-  @extend %button-style;
-  background-color: lighten($primary-color, 10%);
-
-  &:hover {
-    background-color: lighten($primary-color, 20%);
   }
 }
