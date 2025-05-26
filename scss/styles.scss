@@ -63,8 +63,25 @@ header a {
   }
 }
 
+.navbar-nav {
+  text-align: left;
+  padding-left: 20px;
+
+  .nav-link {
+    font-size: 18px;
+    padding: 10px 0;
+    font-weight: 500;
+    color: white;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+
 .navbar-toggler {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 h1, h2, h3 {
