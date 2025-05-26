@@ -8,7 +8,8 @@
     transform: translateY(0);
   }
 }
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -18,6 +19,17 @@ html, body {
 
 main {
   flex: 1;
+}
+
+header {
+  background-color: #007C91;
+}
+
+footer {
+  background-color: #004D5E;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
 header a {
@@ -68,7 +80,13 @@ header a {
   margin-right: 20px;
 }
 
-h1, h2, h3 {
+.navbar-brand {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #000000;
@@ -170,17 +188,17 @@ body {
   margin-bottom: 20px;
 }
 .destacados .producto-inicio .btn-modern {
-  align-self: center;
-  background-color: #000;
+  background-color: #007c91;
   color: #fff;
   padding: 10px 20px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s ease;
+  font-weight: bold;
+  transition: all 0.3s ease;
 }
 .destacados .producto-inicio .btn-modern:hover {
-  background-color: #333;
+  background-color: #005e6d;
+  transform: translateY(-2px);
 }
 
 main {

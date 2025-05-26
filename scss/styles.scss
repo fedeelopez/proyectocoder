@@ -5,6 +5,8 @@ $button-hover: #333;
 $text-color: #000;
 $text-muted: #333;
 $font-stack: "Segoe UI", sans-serif;
+$nav-bg: #007C91; // Navbar fondo azul oscuro agradable
+$footer-bg: #004D5E; // Footer más oscuro para contraste
 
 // ANIMACIÓN
 @keyframes fadeInUp {
@@ -18,7 +20,8 @@ $font-stack: "Segoe UI", sans-serif;
   }
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -28,6 +31,17 @@ html, body {
 
 main {
   flex: 1;
+}
+
+header {
+  background-color: $nav-bg;
+}
+
+footer {
+  background-color: $footer-bg;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
 }
 
 header a {
@@ -79,13 +93,18 @@ header a {
   }
 }
 
-
 .navbar-toggler {
   margin-right: 20px;
 }
 
-h1, h2, h3 {
-  font-family: 'Poppins', sans-serif;
+.navbar-brand {
+  text-decoration: none !important;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
   font-weight: 600;
   color: #000000;
   text-align: center;
@@ -112,7 +131,7 @@ body {
   position: relative;
 
   .contenido-hero {
-    background-color: rgba(0, 0, 0, 0.4); // más sutil
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 40px 60px;
     border-radius: 12px;
 
@@ -130,7 +149,6 @@ body {
     }
   }
 
-  // ✅ SOLO afecta mobile, NO modifica desktop
   @media (max-width: 768px) {
     background-size: cover !important;
     background-position: center !important;
@@ -198,17 +216,17 @@ body {
     }
 
     .btn-modern {
-      align-self: center;
-      background-color: #000;
+      background-color: #007c91;
       color: #fff;
       padding: 10px 20px;
-      border-radius: 6px;
+      border-radius: 8px;
       text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      transition: all 0.3s ease;
 
       &:hover {
-        background-color: #333;
+        background-color: #005e6d;
+        transform: translateY(-2px);
       }
     }
   }
@@ -227,16 +245,15 @@ main {
   }
 
   ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 
-  li {
-    margin-bottom: 5px;
+    li {
+      margin-bottom: 5px;
+    }
   }
-}
-
 
   .producto {
     background-color: #f5c06e;
