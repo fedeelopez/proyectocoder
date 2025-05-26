@@ -99,6 +99,58 @@ body {
   color: $text-color;
 }
 
+.hero-banner {
+  background: url("../assets/fondo-inicio.png") center top no-repeat;
+  background-size: contain;
+  height: auto;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+
+  .contenido-hero {
+    background-color: rgba(0, 0, 0, 0.4); // más sutil
+    padding: 40px 60px;
+    border-radius: 12px;
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin: 0;
+      color: white;
+    }
+  }
+
+  // ✅ SOLO afecta mobile, NO modifica desktop
+  @media (max-width: 768px) {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 100vh;
+
+    .contenido-hero {
+      padding: 20px 15px;
+      border-radius: 10px;
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
 // SECCIÓN INICIO DESTACADOS
 .destacados {
   padding: 60px 20px;

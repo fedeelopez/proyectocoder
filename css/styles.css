@@ -83,6 +83,52 @@ body {
   color: #000;
 }
 
+.hero-banner {
+  background: url("../assets/fondo-inicio.png") center top no-repeat;
+  background-size: contain;
+  height: auto;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+}
+.hero-banner .contenido-hero {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 40px 60px;
+  border-radius: 12px;
+}
+.hero-banner .contenido-hero h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+.hero-banner .contenido-hero p {
+  font-size: 1.2rem;
+  margin: 0;
+  color: white;
+}
+@media (max-width: 768px) {
+  .hero-banner {
+    background-size: cover !important;
+    background-position: center !important;
+    min-height: 100vh;
+  }
+  .hero-banner .contenido-hero {
+    padding: 20px 15px;
+    border-radius: 10px;
+  }
+  .hero-banner .contenido-hero h1 {
+    font-size: 2rem;
+  }
+  .hero-banner .contenido-hero p {
+    font-size: 1rem;
+  }
+}
+
 .destacados {
   padding: 60px 20px;
   text-align: center;
