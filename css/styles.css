@@ -129,6 +129,15 @@ main .productos-grid {
   max-width: 1200px;
   margin: 0 auto;
 }
+main ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+main ul li {
+  margin-bottom: 5px;
+}
 main .producto {
   background-color: #f5c06e;
   border-radius: 20px;
