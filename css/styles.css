@@ -4,16 +4,119 @@
     transform: translateY(20px);
   }
   100% {
-    opacity: 2;
+    opacity: 1;
     transform: translateY(0);
   }
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+header a {
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+.navbar-nav .nav-link:hover {
+  color: #000000;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 60%;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #000000;
+  text-align: center;
+}
+
 body {
   font-family: "Segoe UI", sans-serif;
-  background: url("../assets/premium_photo-1692029230466-82de7b76fcf5.avif");
+  background: url("../assets/pexels-photo-1103970.webp");
   background-size: cover;
   background-attachment: fixed;
   color: #000;
+}
+
+.destacados {
+  padding: 60px 20px;
+  text-align: center;
+}
+.destacados .titulo-seccion {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #000;
+}
+.destacados .productos-inicio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.destacados .producto-inicio {
+  background-color: #f5c06e;
+  border-radius: 20px;
+  padding: 30px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.destacados .producto-inicio:hover {
+  transform: translateY(-4px);
+}
+.destacados .producto-inicio h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.destacados .producto-inicio p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.destacados .producto-inicio .btn-modern {
+  align-self: center;
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+.destacados .producto-inicio .btn-modern:hover {
+  background-color: #333;
 }
 
 main {
@@ -75,6 +178,98 @@ main .info-producto .btn {
 }
 main .info-producto .btn:hover {
   background-color: #333;
+}
+
+.producto {
+  background-color: #f5c06e;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.info-producto-inicio {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.btn-modern {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.btn-modern:hover {
+  background-color: #f12f2f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(245, 4, 4, 0.3);
+}
+
+.servicios {
+  padding: 60px 20px;
+  text-align: center;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+}
+.servicios .titulo-seccion {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #fff;
+}
+.servicios .grid-servicios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+@media (max-width: 992px) {
+  .servicios .grid-servicios {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .servicios .grid-servicios {
+    grid-template-columns: 1fr;
+  }
+}
+.servicios .servicio {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(3px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+.servicios .servicio h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.servicios .servicio p {
+  font-size: 14px;
+  color: #ccc;
+}
+.servicios .servicio:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=styles.css.map */
