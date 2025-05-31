@@ -36,6 +36,32 @@ header a {
   text-decoration: none;
 }
 
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+}
+.navbar-toggler .toggler-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .collapse.navbar-collapse {
+    background-color: #007C91;
+    padding: 1rem;
+  }
+}
+
 .navbar-nav .nav-link {
   position: relative;
   color: white;
