@@ -8,6 +8,16 @@
     transform: translateY(0);
   }
 }
+@keyframes fadeInMenu {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 html,
 body {
   height: 100%;
@@ -39,26 +49,28 @@ header a {
 .navbar-toggler {
   border: none;
   background: transparent;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0.25rem 0.75rem;
 }
 .navbar-toggler .toggler-icon {
   display: block;
-  width: 24px;
-  height: 2px;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
   background-color: white;
-  margin: 4px 0;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
   .collapse.navbar-collapse {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 240px;
     background-color: #007C91;
     padding: 1rem;
+    border-radius: 10px;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInMenu 0.3s ease-out forwards;
   }
 }
 
@@ -387,6 +399,34 @@ main .info-producto .btn:hover {
   transform: translateY(-5px);
   background-color: rgba(255, 255, 255, 0.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 768px) {
+  .navbar-collapse {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 240px;
+    background-color: #007C91;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 999;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: fadeInMenu 0.3s ease-out forwards;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav-link {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav-link:hover {
+    background-color: rgb(0, 102.1931034483, 119.5);
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
