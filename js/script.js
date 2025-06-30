@@ -1,3 +1,4 @@
+/*
 // VARIABLES Y CONSTANTES
 const productos = ["Termo Stanley", "Botella térmica", "Mate", "Vaso térmico"];
 let carrito = [];
@@ -33,3 +34,5 @@ while (continuar) {
 
 console.log("🛒 Productos en tu carrito:", carrito);
 alert("Gracias por tu compra. Revisá la consola para ver tu carrito.");
+
+*/
