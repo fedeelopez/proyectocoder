@@ -11,64 +11,26 @@ function agregarProducto(id, nombre, precio, cantidad) {
   actualizarResumen();
 }
 
-function animarCarrito(elemento) {
-  if (!elemento) return;
-  elemento.classList.add("carrito-animado");
-  setTimeout(() => elemento.classList.remove("carrito-animado"), 400);
-}
-
 function actualizarResumen() {
-  const resumen = document.getElementById("resumen-carrito");
+  const resumenDesktop = document.getElementById("carrito-resumen-desktop");
+  const resumenMobile = document.getElementById("carrito-resumen");
 
   const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
   const totalPrecio = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
 
-  // Compatibilidad con versiones anteriores
-  const iconosCarrito = document.querySelectorAll("#carrito-resumen");
-  iconosCarrito.forEach(icon => {
-    icon.textContent = totalItems;
-    icon.title = `Total: $${totalPrecio.toLocaleString()}`;
-  });
-
-  // Soporte actualizado para IDs separados
-  const resumenMobile = document.getElementById("carrito-resumen-mobile");
-  const resumenDesktop = document.getElementById("carrito-resumen-desktop");
-
-  if (resumenMobile) {
-    resumenMobile.textContent = totalItems;
-    resumenMobile.title = `Total: $${totalPrecio.toLocaleString()}`;
-    animarCarrito(resumenMobile);
-  }
-
   if (resumenDesktop) {
     resumenDesktop.textContent = totalItems;
     resumenDesktop.title = `Total: $${totalPrecio.toLocaleString()}`;
-    animarCarrito(resumenDesktop);
+  }
+  if (resumenMobile) {
+    resumenMobile.textContent = totalItems;
+    resumenMobile.title = `Total: $${totalPrecio.toLocaleString()}`;
   }
 
-  // Actualizar el resumen flotante (si existe)
-  if (resumen) {
-    if (carrito.length === 0) {
-      resumen.textContent = "Carrito vacío";
-    } else {
-      resumen.innerHTML = `
-        Productos: ${totalItems} | Total: $${totalPrecio.toLocaleString()}
-        <button id="vaciarCarrito" class="btn btn-sm btn-outline-danger ms-2">Vaciar</button>
-      `;
-
-      document.getElementById("vaciarCarrito").addEventListener("click", () => {
-        carrito = [];
-        localStorage.removeItem("carrito");
-        actualizarResumen();
-        renderizarCarritoEnModal();
-      });
-    }
-  }
-
-  renderizarCarritoEnModal(); // Esto asegura que el modal también se actualice
+  renderizarCarrito();
 }
 
-function renderizarCarritoEnModal() {
+function renderizarCarrito() {
   const contenedor = document.getElementById("detalle-carrito");
   if (!contenedor) return;
 
@@ -77,46 +39,60 @@ function renderizarCarritoEnModal() {
     return;
   }
 
-  let html = `
-    <table class="table table-sm table-bordered align-middle text-center">
-      <thead class="table-light">
-        <tr>
-          <th>Producto</th>
-          <th>Cantidad</th>
-          <th>Subtotal</th>
-        </tr>
-      </thead>
-      <tbody>
-  `;
-
   let total = 0;
-  carrito.forEach(producto => {
+  let html = "<div class='carrito-vertical'>";
+
+  carrito.forEach((producto, i) => {
     const subtotal = producto.precio * producto.cantidad;
     total += subtotal;
     html += `
-      <tr>
-        <td>${producto.nombre}</td>
-        <td>${producto.cantidad}</td>
-        <td>$${subtotal.toLocaleString()}</td>
-      </tr>
+      <div class="card mb-3 p-2 shadow-sm">
+        <div class="d-flex justify-content-between align-items-center">
+          <div class="fw-bold">${producto.nombre}</div>
+          <div>$${producto.precio.toLocaleString()} c/u</div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mt-2">
+          <div class="cantidad-controls d-flex align-items-center gap-2">
+            <button class="btn btn-sm btn-secondary" onclick="modificarCantidad(${i}, -1)">−</button>
+            <span>${producto.cantidad}</span>
+            <button class="btn btn-sm btn-secondary" onclick="modificarCantidad(${i}, 1)">+</button>
+          </div>
+          <div class="text-end">
+            <div class="text-muted">Subtotal:</div>
+            <div class="fw-bold">$${subtotal.toLocaleString()}</div>
+          </div>
+        </div>
+        <div class="text-end mt-2">
+          <button class="btn btn-sm btn-outline-danger" onclick="eliminarProducto(${i})">Eliminar</button>
+        </div>
+      </div>
     `;
   });
 
   html += `
-      </tbody>
-      <tfoot>
-        <tr>
-          <td colspan="2" class="text-end"><strong>Total:</strong></td>
-          <td><strong>$${total.toLocaleString()}</strong></td>
-        </tr>
-      </tfoot>
-    </table>
-  `;
+    <div class="text-end mt-3 border-top pt-3">
+      <h5>Total: $${total.toLocaleString()}</h5>
+    </div>
+  </div>`;
 
   contenedor.innerHTML = html;
 }
 
-// Listeners para los botones Agregar
+function modificarCantidad(index, delta) {
+  carrito[index].cantidad += delta;
+  if (carrito[index].cantidad < 1) carrito[index].cantidad = 1;
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarResumen();
+}
+
+function eliminarProducto(index) {
+  carrito.splice(index, 1);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  actualizarResumen();
+}
+
+// Agregar productos desde botones
+
 document.querySelectorAll(".agregar-carrito").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = parseInt(btn.dataset.id);
@@ -127,26 +103,20 @@ document.querySelectorAll(".agregar-carrito").forEach(btn => {
 
     if (cantidad > 0) {
       agregarProducto(id, nombre, precio, cantidad);
+      document.getElementById(cantidadId).value = 1; // volver a 1
     }
   });
 });
 
 actualizarResumen();
 
-const iconoCarrito = document.getElementById("carrito-nav");
-if (iconoCarrito) {
-  iconoCarrito.addEventListener("click", renderizarCarritoEnModal);
-}
+// Vaciar carrito
 
-const vaciarCarritoModal = document.getElementById("vaciarCarritoModal");
-if (vaciarCarritoModal) {
-  vaciarCarritoModal.addEventListener("click", () => {
-    carrito = [];
-    localStorage.removeItem("carrito");
-    actualizarResumen();
-    renderizarCarritoEnModal();
-  });
-}
+document.getElementById("vaciarCarritoLateral").addEventListener("click", () => {
+  carrito = [];
+  localStorage.removeItem("carrito");
+  actualizarResumen();
+});
 
 function cambiarCantidad(id, delta) {
   const input = document.getElementById(id);
