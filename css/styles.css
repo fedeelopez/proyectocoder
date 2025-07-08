@@ -658,53 +658,5 @@ main .info-producto .btn:hover {
     margin-left: 0;
   }
 }
-#carrito-flotante {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007C91;
-  color: white;
-  font-size: 22px;
-  padding: 10px 14px;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  z-index: 1050;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-#carrito-flotante:hover {
-  background-color: #005e6d;
-}
-
-#carrito-flotante .badge {
-  font-size: 0.75rem;
-}
-
-@media (max-width: 767px) {
-  #carrito-nav-desktop {
-    display: none !important;
-  }
-}
-.toast-carrito {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background-color: #007C91;
-  color: white;
-  padding: 10px 20px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  z-index: 2000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  animation: fadeInOut 2s ease;
-}
-
-.carrito-animado {
-  animation: bounce 0.4s ease;
-}
 
 /*# sourceMappingURL=styles.css.map */
