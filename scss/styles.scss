@@ -499,36 +499,107 @@ main {
 }
 
 .bloque-cantidad {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-top: 15px;
+  flex-wrap: wrap;
 }
 
 .bloque-cantidad input[type="number"] {
-  width: 55px;
-  height: 38px;
-  padding: 4px;
-  font-size: 14px;
-  line-height: 1;
+  width: 48px;
+  height: 40px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  transition: border 0.2s ease;
 }
 
-.bloque-cantidad button {
-  height: 38px;
-  padding: 6px 14px;
-  font-size: 14px;
+.bloque-cantidad input[type="number"]:focus {
+  outline: none;
+  border-color: #007C91;
+}
+
+.bloque-cantidad .qty-btn {
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;
+  transition: all 0.2s ease;
 }
 
-/* Mostrar flechas en todos los navegadores */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: auto;
-  margin: 0;
+.bloque-cantidad .qty-btn:hover {
+  background-color: #e0e0e0;
 }
 
+.bloque-cantidad .agregar-carrito {
+  background-color: #007C91;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  height: 40px;
+  padding: 0 18px;
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.bloque-cantidad .agregar-carrito:hover {
+  background-color: #005e6d;
+}
+
+#carrito-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007C91;
+  color: white;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+#carrito-flotante:hover {
+  background-color: #005e6d;
+}
+
+#carrito-flotante .badge {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 767px) {
+  #carrito-nav-desktop {
+    display: none !important;
+  }
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.3); }
+  60%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+.carrito-animado {
+  animation: bounce 0.4s ease;
+}

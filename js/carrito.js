@@ -11,18 +11,40 @@ function agregarProducto(id, nombre, precio, cantidad) {
   actualizarResumen();
 }
 
+function animarCarrito(elemento) {
+  if (!elemento) return;
+  elemento.classList.add("carrito-animado");
+  setTimeout(() => elemento.classList.remove("carrito-animado"), 400);
+}
+
 function actualizarResumen() {
   const resumen = document.getElementById("resumen-carrito");
-  const iconosCarrito = document.querySelectorAll("#carrito-resumen");
 
   const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
   const totalPrecio = carrito.reduce((acc, item) => acc + item.precio * item.cantidad, 0);
 
-  // Actualizar TODOS los íconos de carrito (mobile y desktop)
+  // Compatibilidad con versiones anteriores
+  const iconosCarrito = document.querySelectorAll("#carrito-resumen");
   iconosCarrito.forEach(icon => {
     icon.textContent = totalItems;
     icon.title = `Total: $${totalPrecio.toLocaleString()}`;
   });
+
+  // Soporte actualizado para IDs separados
+  const resumenMobile = document.getElementById("carrito-resumen-mobile");
+  const resumenDesktop = document.getElementById("carrito-resumen-desktop");
+
+  if (resumenMobile) {
+    resumenMobile.textContent = totalItems;
+    resumenMobile.title = `Total: $${totalPrecio.toLocaleString()}`;
+    animarCarrito(resumenMobile);
+  }
+
+  if (resumenDesktop) {
+    resumenDesktop.textContent = totalItems;
+    resumenDesktop.title = `Total: $${totalPrecio.toLocaleString()}`;
+    animarCarrito(resumenDesktop);
+  }
 
   // Actualizar el resumen flotante (si existe)
   if (resumen) {
@@ -45,8 +67,6 @@ function actualizarResumen() {
 
   renderizarCarritoEnModal(); // Esto asegura que el modal también se actualice
 }
-
-
 
 function renderizarCarritoEnModal() {
   const contenedor = document.getElementById("detalle-carrito");
@@ -96,7 +116,6 @@ function renderizarCarritoEnModal() {
   contenedor.innerHTML = html;
 }
 
-
 // Listeners para los botones Agregar
 document.querySelectorAll(".agregar-carrito").forEach(btn => {
   btn.addEventListener("click", () => {
@@ -114,11 +133,24 @@ document.querySelectorAll(".agregar-carrito").forEach(btn => {
 
 actualizarResumen();
 
-document.getElementById("carrito-nav").addEventListener("click", renderizarCarritoEnModal);
+const iconoCarrito = document.getElementById("carrito-nav");
+if (iconoCarrito) {
+  iconoCarrito.addEventListener("click", renderizarCarritoEnModal);
+}
 
-document.getElementById("vaciarCarritoModal").addEventListener("click", () => {
-  carrito = [];
-  localStorage.removeItem("carrito");
-  actualizarResumen();
-  renderizarCarritoEnModal();
-});
+const vaciarCarritoModal = document.getElementById("vaciarCarritoModal");
+if (vaciarCarritoModal) {
+  vaciarCarritoModal.addEventListener("click", () => {
+    carrito = [];
+    localStorage.removeItem("carrito");
+    actualizarResumen();
+    renderizarCarritoEnModal();
+  });
+}
+
+function cambiarCantidad(id, delta) {
+  const input = document.getElementById(id);
+  let valor = parseInt(input.value) || 1;
+  valor = Math.max(1, valor + delta);
+  input.value = valor;
+}

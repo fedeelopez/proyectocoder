@@ -20,14 +20,6 @@
         <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive">Termo Tienda</span>
       </a>
 
-      <!-- Carrito SIEMPRE visible -->
-      <a href="#" id="carrito-nav" class="text-white position-relative ms-auto me-2 d-md-none" data-bs-toggle="modal"
-        data-bs-target="#modalCarrito" style="font-size: 1.5rem;">
-        🛒
-        <span id="carrito-resumen"
-          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-      </a>
-
       <!-- Botón hamburguesa -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
         aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,8 +39,8 @@
         <a href="#" id="carrito-nav-desktop" class="text-white position-relative ms-3 d-none d-md-inline"
           data-bs-toggle="modal" data-bs-target="#modalCarrito" style="font-size: 1.5rem;">
           🛒
-          <span id="carrito-resumen"
-            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
+          <span id="carrito-resumen-desktop"
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none d-md-inline">0</span>
         </a>
       </div>
     </nav>
@@ -66,18 +58,18 @@
   <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Termo + Mate</h3>
-    <p class="precio">Precio: $35.000</p>
     <ul class="mb-2">
       <li>Termo 1.2L</li>
       <li>Mate</li>
       <li>Bombilla</li>
       <li>Varios Colores</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-1" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="1" data-nombre="Termo + Mate" data-precio="35000" data-cantidad-id="cantidad-1">Agregar</button>
-      </div>
+    <p class="precio">Precio: $35.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-1', -1)">−</button>
+      <input type="number" id="cantidad-1" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-1', 1)">+</button>
+      <button class="agregar-carrito" data-id="1" data-nombre="Termo + Mate" data-precio="35000" data-cantidad-id="cantidad-1">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -87,18 +79,19 @@
   <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Combo Matero</h3>
-    <p class="precio">Precio: $40.000</p>
+    
     <ul class="mb-2">
       <li>Termo 1L</li>
       <li>Azucarero y Yerbero</li>
       <li>Mate + Bombilla</li>
       <li>Bolso Matero</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-2" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="2" data-nombre="Combo Matero" data-precio="40000" data-cantidad-id="cantidad-2">Agregar</button>
-      </div>
+    <p class="precio">Precio: $40.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-2', -1)">−</button>
+      <input type="number" id="cantidad-2" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-2', 1)">+</button>
+      <button class="agregar-carrito" data-id="2" data-nombre="Combo Matero" data-precio="40000" data-cantidad-id="cantidad-2">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -108,18 +101,19 @@
   <img class="imagen-producto" src="../assets/botella1l.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Hoppie 1L</h3>
-    <p class="precio">Precio: $25.000</p>
+   
     <ul class="mb-2">
       <li>Acero Inoxidable</li>
       <li>Engomado</li>
       <li>Frio / Calor</li>
       <li>Varios Colores</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-3" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="3" data-nombre="Hoppie 1L" data-precio="25000" data-cantidad-id="cantidad-3">Agregar</button>
-      </div>
+     <p class="precio">Precio: $25.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-3', -1)">−</button>
+      <input type="number" id="cantidad-3" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-3', 1)">+</button>
+      <button class="agregar-carrito" data-id="3" data-nombre="Hoppie 1L" data-precio="25000" data-cantidad-id="cantidad-3">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -129,18 +123,19 @@
   <img class="imagen-producto" src="../assets/WhatsApp Image 2024-12-26 at 20.36.17.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Set de Terere</h3>
-    <p class="precio">Precio: $50.000</p>
+    
     <ul class="mb-2">
       <li>Jarra 2L</li>
       <li>Frio / Calor</li>
       <li>Vasos Termicos</li>
       <li>Varios Colores</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-4" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="4" data-nombre="Set de Terere" data-precio="50000" data-cantidad-id="cantidad-4">Agregar</button>
-      </div>
+    <p class="precio">Precio: $50.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-4', -1)">−</button>
+      <input type="number" id="cantidad-4" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-4', 1)">+</button>
+      <button class="agregar-carrito" data-id="4" data-nombre="Set de Terere" data-precio="50000" data-cantidad-id="cantidad-4">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -150,18 +145,18 @@
   <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.04.18.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Bolso Matero</h3>
-    <p class="precio">Precio: $20.000</p>
     <ul class="mb-2">
       <li>Termico</li>
       <li>Varios Colores</li>
       <li>Frio / Calor</li>
       <li>Tres compartimentos</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-5" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="5" data-nombre="Bolso Matero" data-precio="20000" data-cantidad-id="cantidad-5">Agregar</button>
-      </div>
+    <p class="precio">Precio: $20.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-5', -1)">−</button>
+      <input type="number" id="cantidad-5" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-5', 1)">+</button>
+      <button class="agregar-carrito" data-id="5" data-nombre="Bolso Matero" data-precio="20000" data-cantidad-id="cantidad-5">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -171,17 +166,18 @@
   <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.29.14.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Choperas</h3>
-    <p class="precio">Precio: $40.000</p>
+    
     <ul class="mb-2">
       <li>Varios Colores</li>
       <li>710 Ml</li>
       <li>Consultar Stock</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-6" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="6" data-nombre="Choperas" data-precio="40000" data-cantidad-id="cantidad-6">Agregar</button>
-      </div>
+    <p class="precio">Precio: $40.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-6', -1)">−</button>
+      <input type="number" id="cantidad-6" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-6', 1)">+</button>
+      <button class="agregar-carrito" data-id="6" data-nombre="Choperas" data-precio="40000" data-cantidad-id="cantidad-6">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -191,18 +187,18 @@
   <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.47.03.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Vaso Tipo Quencher</h3>
-    <p class="precio">Precio: $22.000</p>
     <ul class="mb-2">
       <li>Varios Colores</li>
       <li>Distintos Diseños</li>
       <li>Frio / Calor</li>
       <li>Con Bombilla</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-7" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="7" data-nombre="Vaso Tipo Quencher" data-precio="22000" data-cantidad-id="cantidad-7">Agregar</button>
-      </div>
+    <p class="precio">Precio: $22.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-7', -1)">−</button>
+      <input type="number" id="cantidad-7" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-7', 1)">+</button>
+      <button class="agregar-carrito" data-id="7" data-nombre="Vaso Tipo Quencher" data-precio="22000" data-cantidad-id="cantidad-7">🛒 Agregar</button>
     </div>
   </div>
 </div>
@@ -212,20 +208,25 @@
   <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.50.52.jpeg" alt="" />
   <div class="info-producto">
     <h3 class="nombre-producto">Termo Bomba 2.5L</h3>
-    <p class="precio">Precio: $55.000</p>
     <ul class="mb-2">
       <li>Mate + Bombilla</li>
       <li>Varios Colores</li>
       <li>Frio / Calor</li>
     </ul>
-    <div class="text-center">
-      <div class="bloque-cantidad d-inline-flex gap-2 align-items-center justify-content-center">
-        <input type="number" id="cantidad-8" class="form-control form-control-sm cantidad-input" min="1" value="1" />
-        <button class="btn btn-dark btn-sm agregar-carrito" data-id="8" data-nombre="Termo Bomba 2.5L" data-precio="55000" data-cantidad-id="cantidad-8">Agregar</button>
-      </div>
+    <p class="precio">Precio: $55.000</p>
+    <div class="bloque-cantidad">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-8', -1)">−</button>
+      <input type="number" id="cantidad-8" class="cantidad-input" value="1" min="1">
+      <button class="qty-btn" onclick="cambiarCantidad('cantidad-8', 1)">+</button>
+      <button class="agregar-carrito" data-id="8" data-nombre="Termo Bomba 2.5L" data-precio="55000" data-cantidad-id="cantidad-8">🛒 Agregar</button>
     </div>
   </div>
 </div>
+
+<!-- Ícono carrito flotante mobile -->
+<a href="#" id="carrito-flotante" class="d-md-none" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+  🛒<span id="carrito-resumen" class="badge rounded-pill bg-danger ms-1">0</span>
+</a>
 
 
       <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
