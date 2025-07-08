@@ -9,6 +9,8 @@ function agregarProducto(id, nombre, precio, cantidad) {
   }
   localStorage.setItem("carrito", JSON.stringify(carrito));
   actualizarResumen();
+  animarIconoCarrito();
+  mostrarToast("Producto agregado");
 }
 
 function actualizarResumen() {
@@ -39,41 +41,35 @@ function renderizarCarrito() {
     return;
   }
 
+  let html = "";
   let total = 0;
-  let html = "<div class='carrito-vertical'>";
 
   carrito.forEach((producto, i) => {
     const subtotal = producto.precio * producto.cantidad;
     total += subtotal;
     html += `
-      <div class="card mb-3 p-2 shadow-sm">
-        <div class="d-flex justify-content-between align-items-center">
-          <div class="fw-bold">${producto.nombre}</div>
-          <div>$${producto.precio.toLocaleString()} c/u</div>
-        </div>
-        <div class="d-flex justify-content-between align-items-center mt-2">
-          <div class="cantidad-controls d-flex align-items-center gap-2">
-            <button class="btn btn-sm btn-secondary" onclick="modificarCantidad(${i}, -1)">−</button>
-            <span>${producto.cantidad}</span>
-            <button class="btn btn-sm btn-secondary" onclick="modificarCantidad(${i}, 1)">+</button>
+      <div class="carrito-item">
+        <div class="carrito-info">
+          <h6>${producto.nombre}</h6>
+          <div class="cantidad-controls">
+            <button onclick="modificarCantidad(${i}, -1)">−</button>
+            <input type="text" value="${producto.cantidad}" readonly>
+            <button onclick="modificarCantidad(${i}, 1)">+</button>
           </div>
-          <div class="text-end">
-            <div class="text-muted">Subtotal:</div>
-            <div class="fw-bold">$${subtotal.toLocaleString()}</div>
-          </div>
+          <p>$${producto.precio.toLocaleString()} c/u</p>
+          <p><strong>Subtotal:</strong> $${subtotal.toLocaleString()}</p>
         </div>
-        <div class="text-end mt-2">
-          <button class="btn btn-sm btn-outline-danger" onclick="eliminarProducto(${i})">Eliminar</button>
-        </div>
+        <button class="eliminar-btn" onclick="eliminarProducto(${i})">Eliminar</button>
       </div>
     `;
   });
 
   html += `
-    <div class="text-end mt-3 border-top pt-3">
-      <h5>Total: $${total.toLocaleString()}</h5>
+    <div class="mt-3 text-end">
+      <hr>
+      <p class="fw-bold fs-5">Total: $${total.toLocaleString()}</p>
     </div>
-  </div>`;
+  `;
 
   contenedor.innerHTML = html;
 }
@@ -91,8 +87,6 @@ function eliminarProducto(index) {
   actualizarResumen();
 }
 
-// Agregar productos desde botones
-
 document.querySelectorAll(".agregar-carrito").forEach(btn => {
   btn.addEventListener("click", () => {
     const id = parseInt(btn.dataset.id);
@@ -103,14 +97,12 @@ document.querySelectorAll(".agregar-carrito").forEach(btn => {
 
     if (cantidad > 0) {
       agregarProducto(id, nombre, precio, cantidad);
-      document.getElementById(cantidadId).value = 1; // volver a 1
+      document.getElementById(cantidadId).value = 1;
     }
   });
 });
 
 actualizarResumen();
-
-// Vaciar carrito
 
 document.getElementById("vaciarCarritoLateral").addEventListener("click", () => {
   carrito = [];
@@ -118,6 +110,34 @@ document.getElementById("vaciarCarritoLateral").addEventListener("click", () => 
   actualizarResumen();
 });
 
+// ANIMACIÓN DE CARRITO
+function animarIconoCarrito() {
+  const iconos = [
+    document.getElementById("carrito-resumen-desktop"),
+    document.getElementById("carrito-resumen")
+  ];
+
+  iconos.forEach(icono => {
+    if (icono) {
+      icono.classList.add("carrito-animado");
+      setTimeout(() => icono.classList.remove("carrito-animado"), 400);
+    }
+  });
+}
+
+// TOAST EMERGENTE
+function mostrarToast(mensaje) {
+  const toast = document.createElement("div");
+  toast.className = "toast-carrito";
+  toast.textContent = mensaje;
+  document.body.appendChild(toast);
+
+  setTimeout(() => {
+    toast.remove();
+  }, 2000);
+}
+
+// EXTRA — Cambiar cantidad con botones externos (si los usás)
 function cambiarCantidad(id, delta) {
   const input = document.getElementById(id);
   let valor = parseInt(input.value) || 1;

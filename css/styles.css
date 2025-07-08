@@ -553,6 +553,10 @@ main .info-producto .btn:hover {
     transform: scale(1);
   }
 }
+.carrito-animado {
+  animation: bounce 0.4s ease;
+}
+
 .offcanvas {
   max-width: 420px;
   width: 100%;
@@ -656,6 +660,37 @@ main .info-producto .btn:hover {
   }
   .carrito-info {
     margin-left: 0;
+  }
+}
+.toast-carrito {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  background-color: #007C91;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  z-index: 2000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
   }
 }
 
