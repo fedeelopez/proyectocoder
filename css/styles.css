@@ -428,5 +428,48 @@ main .info-producto .btn:hover {
     background-color: rgb(0, 102.1931034483, 119.5);
   }
 }
+.precio {
+  font-size: 1.1rem;
+  color: #f01818;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cantidad-input {
+  border-radius: 8px;
+  text-align: center;
+}
+
+#carrito-resumen {
+  font-size: 0.75rem;
+  padding: 4px 6px;
+}
+
+.bloque-cantidad {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.bloque-cantidad input[type=number] {
+  width: 55px;
+  height: 38px;
+  padding: 4px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.bloque-cantidad button {
+  height: 38px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
 
 /*# sourceMappingURL=styles.css.map */
