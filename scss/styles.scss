@@ -525,4 +525,10 @@ main {
   line-height: 1;
 }
 
+/* Mostrar flechas en todos los navegadores */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: auto;
+  margin: 0;
+}
 
