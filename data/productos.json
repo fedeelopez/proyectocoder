@@ -1,0 +1,156 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Termo + Mate",
+      "precio": 35000,
+      "categoria": "combos",
+      "descripcion": "Termo Stanley 1.2L con mate y bombilla incluidos",
+      "caracteristicas": [
+        "Termo 1.2L",
+        "Mate",
+        "Bombilla",
+        "Varios Colores"
+      ],
+      "imagen": "../assets/combo matero.jpeg",
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "nombre": "Combo Matero",
+      "precio": 40000,
+      "categoria": "combos",
+      "descripcion": "Combo completo con azucarero, yerbero y bolso matero",
+      "caracteristicas": [
+        "Termo 1L",
+        "Azucarero y Yerbero",
+        "Mate + Bombilla",
+        "Bolso Matero"
+      ],
+      "imagen": "../assets/combo matero.jpeg",
+      "destacado": true
+    },
+    {
+      "id": 3,
+      "nombre": "Hoppie 1L",
+      "precio": 25000,
+      "categoria": "botellas",
+      "descripcion": "Botella térmica Stanley Hoppie de 1L con acabado engomado",
+      "caracteristicas": [
+        "Acero Inoxidable",
+        "Engomado",
+        "Frio / Calor",
+        "Varios Colores"
+      ],
+      "imagen": "../assets/botella1l.jpeg",
+      "destacado": true
+    },
+    {
+      "id": 4,
+      "nombre": "Set de Terere",
+      "precio": 50000,
+      "categoria": "combos",
+      "descripcion": "Jarra térmica Stanley de 2L con vasos térmicos incluidos",
+      "caracteristicas": [
+        "Jarra 2L",
+        "Frio / Calor",
+        "Vasos Termicos",
+        "Varios Colores"
+      ],
+      "imagen": "../assets/combo matero.jpeg",
+      "destacado": true
+    },
+    {
+      "id": 5,
+      "nombre": "Termo Clásico 1L",
+      "precio": 30000,
+      "categoria": "termos",
+      "descripcion": "Termo Stanley clásico de 1L con conservación térmica superior",
+      "caracteristicas": [
+        "Conservación 24h",
+        "Acero Inoxidable",
+        "Múltiples Colores",
+        "Tapa Hermética"
+      ],
+      "imagen": "../assets/botella1l.jpeg",
+      "destacado": false
+    },
+    {
+      "id": 6,
+      "nombre": "Vaso Térmico 500ml",
+      "precio": 18000,
+      "categoria": "vasos",
+      "descripcion": "Vaso térmico Stanley de 500ml ideal para bebidas calientes",
+      "caracteristicas": [
+        "500ml",
+        "Acero Inoxidable",
+        "Tapa Hermética",
+        "Múltiples Colores"
+      ],
+      "imagen": "../assets/botella1l.jpeg",
+      "destacado": false
+    },
+    {
+      "id": 7,
+      "nombre": "Mate Premium",
+      "precio": 12000,
+      "categoria": "mates",
+      "descripcion": "Mate premium con bombilla de acero inoxidable",
+      "caracteristicas": [
+        "Mate Premium",
+        "Bombilla Inoxidable",
+        "Diseño Único",
+        "Múltiples Colores"
+      ],
+      "imagen": "../assets/combo matero.jpeg",
+      "destacado": false
+    },
+    {
+      "id": 8,
+      "nombre": "Botella Adventure 750ml",
+      "precio": 22000,
+      "categoria": "botellas",
+      "descripcion": "Botella Stanley Adventure de 750ml para aventuras",
+      "caracteristicas": [
+        "750ml",
+        "Acero Inoxidable",
+        "Resistente Impactos",
+        "Múltiples Colores"
+      ],
+      "imagen": "../assets/botella1l.jpeg",
+      "destacado": false
+    }
+  ],
+  "categorias": [
+    {
+      "id": "todos",
+      "nombre": "Todos los Productos",
+      "descripcion": "Ver todos los productos disponibles"
+    },
+    {
+      "id": "termos",
+      "nombre": "Termos",
+      "descripcion": "Termos de alta calidad para conservación térmica"
+    },
+    {
+      "id": "botellas",
+      "nombre": "Botellas",
+      "descripcion": "Botellas térmicas para hidratación"
+    },
+    {
+      "id": "vasos",
+      "nombre": "Vasos Térmicos",
+      "descripcion": "Vasos térmicos para bebidas calientes y frías"
+    },
+    {
+      "id": "mates",
+      "nombre": "Mates y Bombillas",
+      "descripcion": "Mates tradicionales y bombillas de calidad"
+    },
+    {
+      "id": "combos",
+      "nombre": "Combos",
+      "descripcion": "Combos completos con múltiples productos"
+    }
+  ]
+} 

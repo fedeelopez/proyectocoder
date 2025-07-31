@@ -10,6 +10,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barriecito&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- SweetAlert2 para notificaciones -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <link rel="stylesheet" href="./css/styles.css" />
   <title>TermoTienda - Inicio</title>
@@ -17,15 +19,17 @@
 <body>
   <header class="bg-info sticky-top">
     <nav class="navbar navbar-expand-md navbar-light container">
-      <div class="d-flex align-items-center">
-        <img src="./assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
-        <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
-      </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="toggler-icon top-bar"></span>
-          <span class="toggler-icon middle-bar"></span>
-          <span class="toggler-icon bottom-bar"></span>
-        </button>
+      <a href="./index.html">
+        <div class="d-flex align-items-center">
+          <img src="./assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
+          <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
+      </button>
       <div class="collapse navbar-collapse justify-content-end" id="menuNav">
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link text-white" href="./index.html">Inicio</a></li>
@@ -34,41 +38,41 @@
           <li class="nav-item"><a class="nav-link text-white" href="./pages/empresa.html">Empresa</a></li>
           <li class="nav-item"><a class="nav-link text-white" href="./pages/contacto.html">Contacto</a></li>
         </ul>
+        <!-- Icono del carrito para desktop -->
+        <a href="#" id="carrito-nav-desktop" class="text-white position-relative ms-3 d-none d-md-inline" onclick="mostrarCarrito()">
+          🛒
+          <span id="carrito-resumen-desktop" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none d-md-inline">0</span>
+        </a>
       </div>
     </nav>
   </header>
-<section class="hero-banner">
-  <div class="contenido-hero">
-    <h1>Bienvenidos a Termo Tienda</h1>
-    <p>Productos térmicos de calidad</p>
-  </div>
-</section>
-  <main>
-<section class="destacados">
-  <div class="productos-inicio">
-    <div class="producto-inicio">
-      <h3>Termos de Alta Tecnología</h3>
-      <p>Mantén tus bebidas a la temperatura perfecta durante horas con nuestros termos de diseño innovador...</p>
-      <a href="./pages/productos.html" class="btn-modern">Ver Más</a>
-    </div>
-    
-    <div class="producto-inicio">
-      <h3>Vasos Térmicos Personalizables</h3>
-      <p>Disfrutá de tu café, té o agua fría con aislamiento avanzado. Diseño ergonómico, sin derrames...</p>
-      <a href="./pages/productos.html" class="btn-modern">Ver Más</a>
-    </div>
 
-    <div class="producto-inicio">
-      <h3>Bolsos Térmicos Multifuncionales</h3>
-      <p>Solución elegante para transportar termos, alimentos y bebidas. Ideal para viajes y trabajo.</p>
-      <a href="./pages/productos.html" class="btn-modern">Ver Más</a>
+  <section class="hero-banner-productos">
+    <div class="overlay-hero">
+      <div class="contenido-overlay">
+        <h1>Bienvenidos a Termo Tienda</h1>
+        <p>Productos térmicos de calidad</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <main>
+    <section class="destacados">
+      <div class="productos-inicio" id="productos-destacados">
+        <!-- Los productos se cargarán dinámicamente desde JS -->
+      </div>
+    </section>
   </main>
+
+  <!-- Botón flotante del carrito para móviles -->
+  <a href="#" id="carrito-flotante" class="d-md-none position-fixed bottom-0 end-0 m-3 bg-info text-white rounded-circle p-3 shadow" onclick="mostrarCarrito()">
+    🛒<span id="carrito-resumen" class="badge rounded-pill bg-danger ms-1">0</span>
+  </a>
+
   <footer>
     <p class="mb-0">Federico Lopez | Coder 75710</p>
   </footer>
+  <script src="./js/carrito.js"></script>
   <script src="./js/script.js"></script>
 </body>
 </html>

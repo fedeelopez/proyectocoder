@@ -3,214 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TermoTienda - Productos</title>
+  <meta name="keywords" content="termos, termos personalizados, mates, botellas térmicas, jarras térmicas, termos de acero inoxidable, productos térmicos, termo tienda, comprar termos online, termos modernos, termos para mate, vasos térmicos, termos económicos, tienda de termos, termos originales">
+  <meta name="description" content="Descubrí Termo Tienda: termos, vasos y bolsos térmicos de alta calidad, personalizados y funcionales.">
   <link rel="shortcut icon" href="../assets/LOGO TERMO TIENDA.png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Barriecito&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Barriecito&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- SweetAlert2 para notificaciones -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
   <link rel="stylesheet" href="../css/styles.css" />
+  <title>TermoTienda - Productos</title>
 </head>
 <body>
-<header class="bg-info sticky-top">
-  <nav class="navbar navbar-expand-md navbar-light container align-items-center">
-    <a href="../index.html" class="d-flex align-items-center">
-      <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
-      <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive">Termo Tienda</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="menuNav">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="./destacados.html">Destacados</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="./empresa.html">Empresa</a></li>
-        <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
-      </ul>
-      <a href="#" id="carrito-nav-desktop" class="text-white position-relative ms-3 d-none d-md-inline" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-        🛒
-        <span id="carrito-resumen-desktop" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none d-md-inline">0</span>
+  <header class="bg-info sticky-top">
+    <nav class="navbar navbar-expand-md navbar-light container">
+      <a href="../index.html">
+        <div class="d-flex align-items-center">
+          <img src="../assets/LOGO TERMO TIENDA.png" alt="Logo Termo Tienda" width="60" class="me-2" />
+          <span class="navbar-brand mb-0 h1 text-white" style="font-family: 'Barriecito', cursive;">Termo Tienda</span>
+        </div>
       </a>
-    </div>
-  </nav>
-</header>
-  <main class="container py-5">
-    <h1 class="text-center mb-5" style="font-family: 'Barriecito', cursive">Nuestros Productos</h1>
-    <div class="productos-grid">
-<div class="producto">
-  <img class="imagen-producto" src="../assets/Termo Violeta.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Termo + Mate</h3>
-    <ul class="mb-2">
-      <li>Termo 1.2L</li>
-      <li>Mate</li>
-      <li>Bombilla</li>
-      <li>Varios Colores</li>
-    </ul>
-    <p class="precio">Precio: $35.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-1', -1)">−</button>
-      <input type="number" id="cantidad-1" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-1', 1)">+</button>
-      <button class="agregar-carrito" data-id="1" data-nombre="Termo + Mate" data-precio="35000" data-cantidad-id="cantidad-1">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/combo matero.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Combo Matero</h3>
-    <ul class="mb-2">
-      <li>Termo 1L</li>
-      <li>Azucarero y Yerbero</li>
-      <li>Mate + Bombilla</li>
-      <li>Bolso Matero</li>
-    </ul>
-    <p class="precio">Precio: $40.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-2', -1)">−</button>
-      <input type="number" id="cantidad-2" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-2', 1)">+</button>
-      <button class="agregar-carrito" data-id="2" data-nombre="Combo Matero" data-precio="40000" data-cantidad-id="cantidad-2">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/botella1l.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Hoppie 1L</h3>
-    <ul class="mb-2">
-      <li>Acero Inoxidable</li>
-      <li>Engomado</li>
-      <li>Frio / Calor</li>
-      <li>Varios Colores</li>
-    </ul>
-     <p class="precio">Precio: $25.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-3', -1)">−</button>
-      <input type="number" id="cantidad-3" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-3', 1)">+</button>
-      <button class="agregar-carrito" data-id="3" data-nombre="Hoppie 1L" data-precio="25000" data-cantidad-id="cantidad-3">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/WhatsApp Image 2024-12-26 at 20.36.17.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Set de Terere</h3>
-    <ul class="mb-2">
-      <li>Jarra 2L</li>
-      <li>Frio / Calor</li>
-      <li>Vasos Termicos</li>
-      <li>Varios Colores</li>
-    </ul>
-    <p class="precio">Precio: $50.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-4', -1)">−</button>
-      <input type="number" id="cantidad-4" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-4', 1)">+</button>
-      <button class="agregar-carrito" data-id="4" data-nombre="Set de Terere" data-precio="50000" data-cantidad-id="cantidad-4">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.04.18.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Bolso Matero</h3>
-    <ul class="mb-2">
-      <li>Termico</li>
-      <li>Varios Colores</li>
-      <li>Frio / Calor</li>
-      <li>Tres compartimentos</li>
-    </ul>
-    <p class="precio">Precio: $20.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-5', -1)">−</button>
-      <input type="number" id="cantidad-5" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-5', 1)">+</button>
-      <button class="agregar-carrito" data-id="5" data-nombre="Bolso Matero" data-precio="20000" data-cantidad-id="cantidad-5">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.29.14.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Choperas</h3>
-    <ul class="mb-2">
-      <li>Varios Colores</li>
-      <li>710 Ml</li>
-      <li>Consultar Stock</li>
-    </ul>
-    <p class="precio">Precio: $40.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-6', -1)">−</button>
-      <input type="number" id="cantidad-6" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-6', 1)">+</button>
-      <button class="agregar-carrito" data-id="6" data-nombre="Choperas" data-precio="40000" data-cantidad-id="cantidad-6">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.47.03.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Vaso Tipo Quencher</h3>
-    <ul class="mb-2">
-      <li>Varios Colores</li>
-      <li>Distintos Diseños</li>
-      <li>Frio / Calor</li>
-      <li>Con Bombilla</li>
-    </ul>
-    <p class="precio">Precio: $22.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-7', -1)">−</button>
-      <input type="number" id="cantidad-7" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-7', 1)">+</button>
-      <button class="agregar-carrito" data-id="7" data-nombre="Vaso Tipo Quencher" data-precio="22000" data-cantidad-id="cantidad-7">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-<div class="producto">
-  <img class="imagen-producto" src="../assets/WhatsApp Image 2025-02-21 at 18.50.52.jpeg" alt="" />
-  <div class="info-producto">
-    <h3 class="nombre-producto">Termo Bomba 2.5L</h3>
-    <ul class="mb-2">
-      <li>Mate + Bombilla</li>
-      <li>Varios Colores</li>
-      <li>Frio / Calor</li>
-    </ul>
-    <p class="precio">Precio: $55.000</p>
-    <div class="bloque-cantidad">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-8', -1)">−</button>
-      <input type="number" id="cantidad-8" class="cantidad-input" value="1" min="1">
-      <button class="qty-btn" onclick="cambiarCantidad('cantidad-8', 1)">+</button>
-      <button class="agregar-carrito" data-id="8" data-nombre="Termo Bomba 2.5L" data-precio="55000" data-cantidad-id="cantidad-8">🛒 Agregar</button>
-    </div>
-  </div>
-</div>
-   <a href="#" id="carrito-flotante" class="d-md-none position-fixed bottom-0 end-0 m-3 bg-info text-white rounded-circle p-3 shadow" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCarrito">
-    🛒<span id="carrito-resumen" class="badge rounded-pill bg-danger ms-1">0</span>
-  </a>
-</main>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon top-bar"></span>
+        <span class="toggler-icon middle-bar"></span>
+        <span class="toggler-icon bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="menuNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="../index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./destacados.html">Destacados</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./empresa.html">Empresa</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="./contacto.html">Contacto</a></li>
+        </ul>
+        <!-- Icono del carrito para desktop -->
+        <a href="#" id="carrito-nav-desktop" class="text-white position-relative ms-3 d-none d-md-inline" onclick="mostrarCarrito()">
+          🛒
+          <span id="carrito-resumen-desktop" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none d-md-inline">0</span>
+        </a>
+      </div>
+    </nav>
+  </header>
 
+  <main class="container mt-4">
+    <h1 class="text-center mb-4">Nuestros Productos</h1>
+    
+    <!-- Filtros de categorías -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="d-flex flex-wrap gap-2 justify-content-center" id="filtros-categoria">
+          <!-- Los filtros se cargarán dinámicamente -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Contenedor de productos -->
+    <div class="row" id="contenedor-productos">
+      <!-- Los productos se cargarán dinámicamente desde JS -->
+    </div>
+
+    <!-- Botón flotante del carrito para móviles -->
+    <a href="#" id="carrito-flotante" class="d-md-none position-fixed bottom-0 end-0 m-3 bg-info text-white rounded-circle p-3 shadow" onclick="mostrarCarrito()">
+      🛒<span id="carrito-resumen" class="badge rounded-pill bg-danger ms-1">0</span>
+    </a>
+  </main>
+
+  <!-- Offcanvas del carrito -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCarrito">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title">🛒 Carrito de Compras</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div id="detalle-carrito">
-      
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title">🛒 Carrito de Compras</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
-    <div class="mt-3 border-top pt-3 text-end">
-      <button id="vaciarCarritoLateral" class="btn btn-outline-danger btn-sm mt-2">Vaciar carrito</button>
+    <div class="offcanvas-body">
+      <div id="detalle-carrito">
+        <!-- El contenido del carrito se cargará dinámicamente -->
+      </div>
+      <div class="mt-3 border-top pt-3 text-end">
+        <button id="vaciarCarritoLateral" class="btn btn-outline-danger btn-sm mt-2">Vaciar carrito</button>
+        <button id="finalizarCompra" class="btn btn-success btn-sm mt-2 ms-2">Finalizar Compra</button>
+      </div>
     </div>
   </div>
-</div>
+
   <footer>
     <p class="mb-0">Federico López | Coder 75710</p>
   </footer>
+  
   <script src="../js/carrito.js"></script>
+  <script src="../js/productos.js"></script>
 </body>
-
 </html>
