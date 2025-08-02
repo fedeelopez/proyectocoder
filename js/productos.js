@@ -13,7 +13,7 @@ class Producto {
 
   generarHTML() {
     const caracteristicasHTML = this.caracteristicas.map(caract => `<li>${caract}</li>`).join('');
-    
+
     return `
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card producto-card-stanley h-100">
@@ -52,19 +52,19 @@ async function cargarDatosRemotos() {
     if (!respuesta.ok) {
       throw new Error('Error al cargar los datos');
     }
-    
+
     const datos = await respuesta.json();
     productos = datos.productos.map(p => new Producto(
       p.id, p.nombre, p.precio, p.categoria, p.descripcion, 
       p.caracteristicas, p.imagen, p.destacado
     ));
-    
+
     // Obtener categorías únicas
     categorias = [...new Set(productos.map(p => p.categoria))];
-    
+
     mostrarFiltrosCategoria();
     mostrarProductos();
-    
+
   } catch (error) {
     console.error('Error cargando datos:', error);
     Swal.fire({
@@ -86,7 +86,7 @@ function mostrarFiltrosCategoria() {
       Todos
     </button>
   `;
-  
+
   categorias.forEach(categoria => {
     html += `
       <button class="btn btn-outline-primary me-2 mb-2" onclick="filtrarPorCategoria('${categoria}')">
@@ -94,7 +94,7 @@ function mostrarFiltrosCategoria() {
       </button>
     `;
   });
-  
+
   contenedor.innerHTML = html;
 }
 
@@ -110,11 +110,11 @@ function mostrarProductos() {
   if (!contenedor) return;
 
   let productosFiltrados = productos;
-  
+
   if (categoriaActual !== 'todos') {
     productosFiltrados = productos.filter(p => p.categoria === categoriaActual);
   }
-  
+
   if (productosFiltrados.length === 0) {
     contenedor.innerHTML = `
       <div class="col-12 text-center">
@@ -124,7 +124,7 @@ function mostrarProductos() {
     `;
     return;
   }
-  
+
   const html = productosFiltrados.map(producto => producto.generarHTML()).join('');
   contenedor.innerHTML = html;
 }
@@ -143,7 +143,7 @@ function agregarProductoCarrito(id) {
   if (!producto) return;
 
   const cantidad = parseInt(document.getElementById(`cantidad-${id}`).value) || 1;
-  
+
   if (cantidad < 1 || cantidad > 10) {
     Swal.fire({
       icon: 'warning',
@@ -154,14 +154,14 @@ function agregarProductoCarrito(id) {
     return;
   }
 
-  // Usar la instancia global del carrito desde carrito.js
+  // Usa la instancia global del carrito desde carrito.js
   window.carritoCompras.agregarProducto(producto, cantidad);
-  
-  // Resetear cantidad a 1
+
+  // Resetea cantidad a 1
   document.getElementById(`cantidad-${id}`).value = 1;
 }
 
 // Inicialización cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
   cargarDatosRemotos();
-}); 
+});

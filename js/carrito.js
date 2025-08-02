@@ -1,7 +1,3 @@
-// ========================================
-// CARRITO DE COMPRAS UNIFICADO
-// ========================================
-
 // Clase para manejar el carrito
 class CarritoCompras {
   constructor() {
@@ -10,7 +6,7 @@ class CarritoCompras {
 
   agregarProducto(producto, cantidad = 1) {
     const itemExistente = this.items.find(item => item.id === producto.id);
-    
+
     if (itemExistente) {
       itemExistente.cantidad += cantidad;
     } else {
@@ -21,7 +17,7 @@ class CarritoCompras {
         cantidad: cantidad
       });
     }
-    
+
     this.guardarEnLocalStorage();
     this.actualizarContadorCarrito();
     this.mostrarNotificacionExito(`✅ ${producto.nombre} agregado al carrito`);
@@ -75,7 +71,7 @@ class CarritoCompras {
 
   actualizarContadorCarrito() {
     const totalItems = this.obtenerCantidadTotal();
-    
+
     const contadores = [
       document.getElementById('carrito-resumen'),
       document.getElementById('carrito-resumen-desktop')
@@ -127,7 +123,7 @@ function procesarCompra() {
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-      // Simular proceso de pago
+      // Simula proceso de pago
       Swal.fire({
         title: 'Procesando pago...',
         text: 'Por favor espera',
@@ -204,25 +200,25 @@ function mostrarCarrito() {
 // Funciones auxiliares para el carrito
 function modificarCantidadCarrito(index, delta) {
   carritoCompras.modificarCantidad(index, delta);
-  mostrarCarrito(); // Recargar el carrito
+  mostrarCarrito(); // Recarga el carrito
 }
 
 function eliminarDelCarrito(index) {
   carritoCompras.eliminarProducto(index);
-  mostrarCarrito(); // Recargar el carrito
+  mostrarCarrito(); // Recarga el carrito
 }
 
-// Inicialización cuando el DOM esté listo
+// Inicializa cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  // Actualizar contador del carrito
+  // Actualiza contador del carrito
   carritoCompras.actualizarContadorCarrito();
 });
 
-// Exportar funciones para uso global
+// Exporta funciones para uso global
 window.mostrarCarrito = mostrarCarrito;
 window.procesarCompra = procesarCompra;
 window.modificarCantidadCarrito = modificarCantidadCarrito;
 window.eliminarDelCarrito = eliminarDelCarrito;
 
-// Exportar la instancia global del carrito
+// Exporta la instancia global del carrito
 window.carritoCompras = carritoCompras;

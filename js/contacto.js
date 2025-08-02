@@ -1,4 +1,3 @@
-// Obtener referencias
 const form = document.querySelector("#form-contacto");
 const output = document.querySelector("#salida");
 
@@ -105,7 +104,7 @@ form.addEventListener("submit", function (e) {
     }
   });
 
-  // Simular envío
+  // Simula envío
   setTimeout(() => {
     const usuario = {
       nombre,
@@ -161,7 +160,7 @@ function mostrarHistorialContactos() {
 // Función para eliminar contacto
 function eliminarContacto(index) {
   const contacto = contactos[index];
-  
+
   Swal.fire({
     title: '¿Eliminar contacto?',
     text: `¿Estás seguro de que quieres eliminar el contacto de ${contacto.nombre}?`,
@@ -173,7 +172,7 @@ function eliminarContacto(index) {
     if (result.isConfirmed) {
       contactos.splice(index, 1);
       localStorage.setItem("contactos", JSON.stringify(contactos));
-      
+
       Swal.fire({
         icon: 'success',
         title: 'Contacto eliminado',
@@ -181,7 +180,7 @@ function eliminarContacto(index) {
         timer: 1500,
         showConfirmButton: false
       });
-      
+
       mostrarHistorialContactos();
     }
   });
@@ -209,7 +208,7 @@ function limpiarHistorialContactos() {
     if (result.isConfirmed) {
       contactos = [];
       localStorage.removeItem("contactos");
-      
+
       Swal.fire({
         icon: 'success',
         title: 'Historial limpiado',
@@ -221,9 +220,9 @@ function limpiarHistorialContactos() {
   });
 }
 
-// Inicialización cuando el DOM esté listo
+// Inicializa cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  // Agregar botones para gestionar contactos si existen
+  // Agrega botones para gestionar contactos si existen
   const botonHistorial = document.getElementById('ver-historial');
   if (botonHistorial) {
     botonHistorial.addEventListener('click', mostrarHistorialContactos);
@@ -235,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Exportar funciones para uso global
+// Exporta funciones para uso global
 window.mostrarHistorialContactos = mostrarHistorialContactos;
 window.eliminarContacto = eliminarContacto;
 window.limpiarHistorialContactos = limpiarHistorialContactos;

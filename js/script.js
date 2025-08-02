@@ -40,20 +40,19 @@ async function cargarDatosRemotos() {
     if (!respuesta.ok) {
       throw new Error('Error al cargar los datos');
     }
-    
+
     const datos = await respuesta.json();
     productos = datos.productos.map(p => {
-      // Ajustar rutas de imágenes para la página de inicio
       const imagenAjustada = p.imagen.replace('../assets/', './assets/');
       return new Producto(
-        p.id, p.nombre, p.precio, p.categoria, p.descripcion, 
+        p.id, p.nombre, p.precio, p.categoria, p.descripcion,
         p.caracteristicas, imagenAjustada, p.destacado
       );
     });
-    
+
     datosCargados = true;
     mostrarProductosDestacados();
-    
+
   } catch (error) {
     console.error('Error cargando datos:', error);
     Swal.fire({
@@ -122,7 +121,7 @@ function mostrarDetalleProducto(id) {
     }
   }).then((result) => {
     if (result.isConfirmed) {
-      // Usar la instancia global del carrito desde carrito.js
+
       window.carritoCompras.agregarProducto(producto, result.value);
     }
   });
@@ -149,12 +148,12 @@ function mostrarInformacionEmpresa() {
   });
 }
 
-// Inicialización cuando el DOM esté listo
+// Inicializa cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
-  // Cargar datos remotos
+  // Carga datos remotos
   cargarDatosRemotos();
-  
-  // Agregar event listener para información de empresa
+
+  // Agrega event listener para información de empresa
   const enlaceEmpresa = document.querySelector('a[href="./pages/empresa.html"]');
   if (enlaceEmpresa) {
     enlaceEmpresa.addEventListener('click', function(e) {
@@ -164,5 +163,4 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Exportar funciones para uso global
 window.mostrarDetalleProducto = mostrarDetalleProducto;
